@@ -1,0 +1,10 @@
+Gym-API
+    - Data Acces
+        Models
+        Respositorys
+        DbContext
+    - Business
+        Services
+    - API
+        Controllers
+    
