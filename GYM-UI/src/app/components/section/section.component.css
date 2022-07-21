@@ -1,4 +1,13 @@
+.container-img{
+    display: flex;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding:0 2rem 2rem 2.5rem;
+    max-height: fit-content;
+    
+}
 .img-responsive{
-    max-width: 83.75rem;
-    max-height: 80rem;
+    width: 70%;
+    height: 90%;
+    margin: auto;
 }

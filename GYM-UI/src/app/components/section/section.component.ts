@@ -6,5 +6,6 @@ import {Component}from '@angular/core';
     styleUrls: ['./section.component.css'],
 })
 export class Section{
-    title="Bienvenidos a GYM-APP"
+    title="Bienvenidos a GYM-APP";
+    mapName = 'Donde encontrarnos';
 }
