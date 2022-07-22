@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { Login } from './components/Login/login.component';
 import { About } from './components/About/about.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { About } from './components/About/about.component';
     Pricing,
     HomeComponent,
     Login,
-    About
+    About,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { About } from './components/About/about.component';
     RouterModule.forRoot([
       { path: 'pricing', component: Pricing },
       {path: 'login', component: Login},
-      {path: 'about', component: About}
+      {path: 'about', component: About},
+      {path: 'register', component: RegisterComponent},
     ])
   ],
   providers: [],
