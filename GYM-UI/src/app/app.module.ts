@@ -8,7 +8,9 @@ import{ Navbar } from './components/navbar/navbar.component';
 import{ Footer } from './components/footer/footer.component';
 import{ Section } from './components/section/section.component';
 import { Pricing } from './components/Pricing/Pricing.component';
-import { LoginComponent } from './components/login/login.component';
+import { Login } from './components/Login/Login.components';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -18,12 +20,16 @@ import { LoginComponent } from './components/login/login.component';
     Footer,
     Section,
     Pricing,
-    LoginComponent
+    HomeComponent,
+    Login
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: 'pricing', component: Pricing },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
