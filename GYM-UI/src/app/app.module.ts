@@ -8,9 +8,10 @@ import{ Navbar } from './components/navbar/navbar.component';
 import{ Footer } from './components/footer/footer.component';
 import{ Section } from './components/section/section.component';
 import { Pricing } from './components/Pricing/Pricing.component';
-import { Login } from './components/Login/Login.components';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { Login } from './components/Login/login.component';
+import { About } from './components/About/about.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HomeComponent } from './components/home/home.component';
     Section,
     Pricing,
     HomeComponent,
-    Login
+    Login,
+    About
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,8 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'pricing', component: Pricing },
+      {path: 'login', component: Login},
+      {path: 'about', component: About}
     ])
   ],
   providers: [],

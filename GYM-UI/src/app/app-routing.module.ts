@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { Pricing } from './components/Pricing/Pricing.component';
-import{Login} from './components/Login/Login.components';
+import { About } from './components/About/about.component';
+import { Login } from './components/Login/login.component';
 
 
 export const routes: Routes = [
@@ -11,11 +12,15 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'about',
+    component: About
+  },
+  {
     path: 'post/:variable',
     component: Pricing 
   },
   {
-    path: 'post/:variable',
+    path: 'login',
     component: Login
   }
 ];

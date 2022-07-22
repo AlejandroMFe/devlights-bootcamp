@@ -1,16 +1,36 @@
-<div>
-    <h2>pricing</h2>
-    <!--<div *ngFor=" let class from classes">
-        <div class="container-pricing">
-            <div class="container-pricing-img">
-                <img class="img-responsive" src="{{class.img}}" alt="ex">
-            </div>
-            <div class="container-pricing-info">
-                <h3>{{class.name}}</h3>
-                <p>{{class.description}}</p>
-                <p>{{class.price}}</p>
-                <button class="btn btn-primary">Buy</button>
-            </div>
-        </div>
-    </div>-->
+<Navbar></Navbar>
+<h1>pricing</h1>
+<div class="pricing-grid">
+    <div class="pricing-1">
+        <h2>{{classes[0]}}</h2>
+        <h4>${{prices[0]}}</h4>
+        <p>{{features[0]}}</p>
+        <p>{{description[0]}}</p>
+        <img src={{images[0]}} alt={{classes[0]}}>
+        <br>
+        <br>
+        <a  routerLink="/login"><span></span>Button</a>
+        
+    </div>
+    <div class="pricing-2">
+        <h2>{{classes[1]}}</h2>
+        <h4>${{prices[1]}}</h4>
+        <p>{{features[1]}}</p>
+        <p>{{description[1]}}</p>
+        <img src={{images[1]}} alt={{classes[1]}}>
+        <br><br>
+        <a  routerLink="/login"><span></span>Button</a>
+        
+    </div>
+    <div class="pricing-3">
+        <h2>{{classes[2]}}</h2>
+        <h4>${{prices[2]}}</h4>
+        <p>{{features[2]}}</p>
+        <p>{{description[2]}}</p>
+        <img src={{images[2]}} alt={{classes[2]}}>
+        <br><br>
+        <a  routerLink="/login"><span></span>Button</a>
+        
+    </div>
 </div>
+<Footer></Footer>
