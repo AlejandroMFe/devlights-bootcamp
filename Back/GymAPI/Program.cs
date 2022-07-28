@@ -1,7 +1,11 @@
-using GymDataAccess;
+﻿using GymDataAccess;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using GymAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<GymAPIContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GymAPIContext") ?? throw new InvalidOperationException("Connection string 'GymAPIContext' not found.")));
 
 // Add services to the container.
 
