@@ -10,10 +10,10 @@ public class Activity
     public string Professor { get; set; }
     public int Capacity { get; set; }
     public string Hour { get; set; }
-    public List<DayAndHour> DaysAndHours { get; set; }
     public float Price { get; set; }
 
     // Relations
     public int StudentId { get; set; }
     public IEnumerable<Student> Students { get; set; } = Enumerable.Empty<Student>();
+    public List<DayAndHour> DaysAndHours { get; set; }
 }
