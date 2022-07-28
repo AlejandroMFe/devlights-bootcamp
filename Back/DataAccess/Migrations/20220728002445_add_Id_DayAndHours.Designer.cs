@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GymDataAccess.Migrations
 {
-    [DbContext(typeof(DbGymContext))]
+    [DbContext(typeof(GymDbContext))]
     [Migration("20220728002445_add_Id_DayAndHours")]
     partial class add_Id_DayAndHours
     {

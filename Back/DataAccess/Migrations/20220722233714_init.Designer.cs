@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GymDataAccess.Migrations
 {
-    [DbContext(typeof(DbGymContext))]
+    [DbContext(typeof(GymDbContext))]
     [Migration("20220722233714_init")]
     partial class init
     {

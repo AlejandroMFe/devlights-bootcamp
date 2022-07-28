@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\GymDataAccess.csproj" />
+    <ProjectReference Include="..\GymBusiness\GymBusiness.csproj" />
   </ItemGroup>
 
 </Project>
