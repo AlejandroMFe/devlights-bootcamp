@@ -4,6 +4,7 @@ using GymDataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymDataAccess.Migrations
 {
     [DbContext(typeof(DbGymContext))]
-    partial class DbGymContextModelSnapshot : ModelSnapshot
+    [Migration("20220728002445_add_Id_DayAndHours")]
+    partial class add_Id_DayAndHours
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
