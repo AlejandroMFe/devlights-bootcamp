@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { Login } from './components/Login/login.component';
 import { About } from './components/About/about.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AdminViewComponent } from './components/admin/admin-view.component';
+import { StudentViewComponent } from './components/student-view/student-view.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { RegisterComponent } from './components/register/register.component';
     HomeComponent,
     Login,
     About,
-    RegisterComponent
+    RegisterComponent,
+    AdminViewComponent,
+    StudentViewComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,8 @@ import { RegisterComponent } from './components/register/register.component';
       {path: 'login', component: Login},
       {path: 'about', component: About},
       {path: 'register', component: RegisterComponent},
+      {path: 'admin', component: AdminViewComponent},
+      {path: 'student', component: StudentViewComponent},
     ])
   ],
   providers: [],
