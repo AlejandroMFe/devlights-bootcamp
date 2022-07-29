@@ -15,5 +15,7 @@ namespace GymAPI.Data
         }
 
         public DbSet<GymDataAccess.Models.Activity> Activity { get; set; } = default!;
+
+        public DbSet<GymDataAccess.Models.Student>? Student { get; set; }
     }
 }
