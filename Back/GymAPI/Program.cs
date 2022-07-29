@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using GymAPI.Data;
+using GymBusiness.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<GymAPIContext>(options =>
@@ -15,8 +16,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<GymDbContext>(
     options => options.UseSqlServer("Server=.\\SQLEXPRESS;Initial Catalog=Gym;Integrated Security=True"));
+builder.Services.AddTransient<DataSeedService>();
 
 var app = builder.Build();
+
+// Seed Data
+SeedData(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -32,3 +37,13 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+void SeedData(IHost app)
+{
+    var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using var scope = scopedFactory?.CreateScope();
+    var service = scope?.ServiceProvider.GetService<DataSeedService>();
+    service?.Seed();
+}
