@@ -13,7 +13,6 @@ public class Activity
     public float Price { get; set; }
 
     // Relations
-    public int StudentId { get; set; }
-    public IEnumerable<Student> Students { get; set; } = Enumerable.Empty<Student>();
+    public ICollection<Student> Students { get; set; }  
     public List<DayAndHour> DaysAndHours { get; set; }
 }

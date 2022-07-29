@@ -16,6 +16,5 @@ public class Student
     public string PhoneNumber { get; set; }
 
     // Relations
-    public int ActivityId { get; set; }
-    public IEnumerable<Activity> Activities { get; set; } = Enumerable.Empty<Activity>();
+    public ICollection<Activity> Activities { get; set; }
 }
