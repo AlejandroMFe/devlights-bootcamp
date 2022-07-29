@@ -13,6 +13,6 @@ public class Activity
     public float Price { get; set; }
 
     // Relations
-    public ICollection<Student> Students { get; set; }  
-    public List<DayAndHour> DaysAndHours { get; set; }
+    public ICollection<Student> Students { get; set; }  // many-to-many
+    public ICollection<DayAndHour> DaysAndHours { get; set; }
 }

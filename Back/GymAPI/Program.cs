@@ -21,7 +21,7 @@ builder.Services.AddTransient<DataSeedService>();
 var app = builder.Build();
 
 // Seed Data
-SeedData(app);
+//SeedData(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
