@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymDataAccess.Migrations
 {
     [DbContext(typeof(GymDbContext))]
-    [Migration("20220729003256_many-to-many-ActivityStudent")]
-    partial class manytomanyActivityStudent
+    [Migration("20220730001635_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,21 @@ namespace GymDataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("ActivityDayAndHour", b =>
+                {
+                    b.Property<int>("ActivtiesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DaysAndHoursId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ActivtiesId", "DaysAndHoursId");
+
+                    b.HasIndex("DaysAndHoursId");
+
+                    b.ToTable("ActivityDayAndHour");
+                });
 
             modelBuilder.Entity("ActivityStudent", b =>
                 {
@@ -50,10 +65,6 @@ namespace GymDataAccess.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Hour")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -78,9 +89,6 @@ namespace GymDataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ActivityId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Day")
                         .HasColumnType("int");
 
@@ -93,8 +101,6 @@ namespace GymDataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ActivityId");
 
                     b.ToTable("DayAndHour");
                 });
@@ -131,6 +137,21 @@ namespace GymDataAccess.Migrations
                     b.ToTable("Students");
                 });
 
+            modelBuilder.Entity("ActivityDayAndHour", b =>
+                {
+                    b.HasOne("GymDataAccess.Models.Activity", null)
+                        .WithMany()
+                        .HasForeignKey("ActivtiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GymDataAccess.Models.DayAndHour", null)
+                        .WithMany()
+                        .HasForeignKey("DaysAndHoursId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("ActivityStudent", b =>
                 {
                     b.HasOne("GymDataAccess.Models.Activity", null)
@@ -144,18 +165,6 @@ namespace GymDataAccess.Migrations
                         .HasForeignKey("StudentsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("GymDataAccess.Models.DayAndHour", b =>
-                {
-                    b.HasOne("GymDataAccess.Models.Activity", null)
-                        .WithMany("DaysAndHours")
-                        .HasForeignKey("ActivityId");
-                });
-
-            modelBuilder.Entity("GymDataAccess.Models.Activity", b =>
-                {
-                    b.Navigation("DaysAndHours");
                 });
 #pragma warning restore 612, 618
         }

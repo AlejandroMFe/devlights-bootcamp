@@ -4,7 +4,6 @@ using GymDataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -12,10 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymDataAccess.Migrations
 {
     [DbContext(typeof(GymDbContext))]
-    [Migration("20220722233714_init")]
-    partial class init
+    partial class GymDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,6 +21,21 @@ namespace GymDataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("ActivityDayAndHour", b =>
+                {
+                    b.Property<int>("ActivtiesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DaysAndHoursId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ActivtiesId", "DaysAndHoursId");
+
+                    b.HasIndex("DaysAndHoursId");
+
+                    b.ToTable("ActivityDayAndHour");
+                });
 
             modelBuilder.Entity("ActivityStudent", b =>
                 {
@@ -50,10 +63,6 @@ namespace GymDataAccess.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Hour")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -65,9 +74,6 @@ namespace GymDataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Activities");
@@ -75,6 +81,12 @@ namespace GymDataAccess.Migrations
 
             modelBuilder.Entity("GymDataAccess.Models.DayAndHour", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<int>("Day")
                         .HasColumnType("int");
 
@@ -86,6 +98,8 @@ namespace GymDataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.HasKey("Id");
+
                     b.ToTable("DayAndHour");
                 });
 
@@ -96,9 +110,6 @@ namespace GymDataAccess.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("ActivityId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
@@ -122,6 +133,21 @@ namespace GymDataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("ActivityDayAndHour", b =>
+                {
+                    b.HasOne("GymDataAccess.Models.Activity", null)
+                        .WithMany()
+                        .HasForeignKey("ActivtiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GymDataAccess.Models.DayAndHour", null)
+                        .WithMany()
+                        .HasForeignKey("DaysAndHoursId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ActivityStudent", b =>
