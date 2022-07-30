@@ -1,27 +1,25 @@
-﻿using GymDataAccess;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using GymAPI.Data;
-using GymBusiness.Services;
-
+﻿
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<GymAPIContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("GymAPIContext") ?? throw new InvalidOperationException("Connection string 'GymAPIContext' not found.")));
 
-// Add services to the container.
-
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add services to the container.
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddTransient<DataSeedService>();
 builder.Services.AddDbContext<GymDbContext>(
     options => options.UseSqlServer("Server=.\\SQLEXPRESS;Initial Catalog=Gym;Integrated Security=True"));
-builder.Services.AddTransient<DataSeedService>();
+builder.Services.AddControllers().AddJsonOptions(option => option.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
+
 
 var app = builder.Build();
 
 // Seed Data
-//SeedData(app);
+SeedData(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
