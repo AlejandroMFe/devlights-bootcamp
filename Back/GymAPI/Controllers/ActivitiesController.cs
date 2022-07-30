@@ -4,9 +4,9 @@
     [ApiController]
     public class ActivitiesController : ControllerBase
     {
-        private readonly GymAPIContext _context;
+        private readonly GymDbContext _context;
 
-        public ActivitiesController(GymAPIContext context)
+        public ActivitiesController(GymDbContext context)
         {
             _context = context;
         }
@@ -15,22 +15,25 @@
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Activity>>> GetActivity()
         {
-            if (_context.Activity == null)
+            if (_context.Activities == null)
             {
                 return NotFound();
             }
-            return await _context.Activity.ToListAsync();
+
+            return await _context.Activities.ToListAsync(); // work
+            // use DTO to get the DaysAndHours list
+            //return await _context.Activities.Include(o => o.DaysAndHours).ToListAsync();// work 
         }
 
         // GET: api/Activities/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Activity>> GetActivity(int id)
         {
-            if (_context.Activity == null)
+            if (_context.Activities == null)
             {
                 return NotFound();
             }
-            var activity = await _context.Activity.FindAsync(id);
+            var activity = await _context.Activities.FindAsync(id);
 
             if (activity == null)
             {
@@ -76,11 +79,11 @@
         [HttpPost]
         public async Task<ActionResult<Activity>> PostActivity(Activity activity)
         {
-            if (_context.Activity == null)
+            if (_context.Activities == null)
             {
-                return Problem("Entity set 'GymAPIContext.Activity'  is null.");
+                return Problem("Entity set 'GymAPIContext.Activities'  is null.");
             }
-            _context.Activity.Add(activity);
+            _context.Activities.Add(activity);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetActivity", new { id = activity.Id }, activity);
@@ -90,17 +93,17 @@
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteActivity(int id)
         {
-            if (_context.Activity == null)
+            if (_context.Activities == null)
             {
                 return NotFound();
             }
-            var activity = await _context.Activity.FindAsync(id);
+            var activity = await _context.Activities.FindAsync(id);
             if (activity == null)
             {
                 return NotFound();
             }
 
-            _context.Activity.Remove(activity);
+            _context.Activities.Remove(activity);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -108,7 +111,7 @@
 
         private bool ActivityExists(int id)
         {
-            return (_context.Activity?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Activities?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -3,6 +3,11 @@
 
 public class Activity
 {
+    public Activity()
+    {
+        Students = new HashSet<Student>();
+        DaysAndHours = new HashSet<DayAndHour>();
+    }
     public int Id { get; set; }
     public string Name { get; set; }
     public string Professor { get; set; }
@@ -10,6 +15,7 @@ public class Activity
     public float Price { get; set; }
 
     // Relations
-    public ICollection<Student> Students { get; set; }  // many-to-many
-    public ICollection<DayAndHour> DaysAndHours { get; set; }
+    // many-to-many
+    public ICollection<Student> Students { get; set; }  
+    public ICollection<DayAndHour> DaysAndHours { get; set; } 
 }

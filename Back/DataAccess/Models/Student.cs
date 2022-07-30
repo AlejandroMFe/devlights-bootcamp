@@ -1,6 +1,10 @@
 ﻿namespace GymDataAccess.Models;
 public class Student
 {
+    public Student()
+    {
+        Activities = new HashSet<Activity>();
+    }
     public int Id { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
