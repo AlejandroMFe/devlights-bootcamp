@@ -21,7 +21,7 @@ public class DataSeedService
             _context.Activities.AddRange(
                 new Activity
                 {
-                    
+
                     Name = "Running",
                     Capacity = 10,
                     Professor = "Usaint Bolt",
@@ -39,7 +39,7 @@ public class DataSeedService
                 },
                 new Activity
                 {
-                    
+
                     Name = "Basketball",
                     Capacity = 10,
                     Professor = "Michael Jordan",
@@ -53,7 +53,7 @@ public class DataSeedService
                 },
                 new Activity
                 {
-                    
+
                     Name = "Swiming",
                     Capacity = 7,
                     Professor = "Michael Phelps",
@@ -71,7 +71,7 @@ public class DataSeedService
                 },
                 new Activity
                 {
-                    
+
                     Name = "CrossFit",
                     Capacity = 5,
                     Professor = "Jolie Gentry",
@@ -86,7 +86,7 @@ public class DataSeedService
                 },
                 new Activity
                 {
-                    
+
                     Name = "Weightlifting",
                     Capacity = 10,
                     Professor = "Popeye",

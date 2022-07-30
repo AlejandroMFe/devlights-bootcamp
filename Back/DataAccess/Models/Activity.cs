@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace GymDataAccess.Models;
+﻿namespace GymDataAccess.Models;
 
 
 public class Activity
@@ -9,7 +7,6 @@ public class Activity
     public string Name { get; set; }
     public string Professor { get; set; }
     public int Capacity { get; set; }
-    public string Hour { get; set; }
     public float Price { get; set; }
 
     // Relations
