@@ -1,9 +1,4 @@
-﻿using GymAPI.Data;
-using GymDataAccess.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-namespace GymAPI.Controllers
+﻿namespace GymAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
