@@ -20,7 +20,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<DataSeedService>();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 builder.Services.AddControllers().AddJsonOptions(option => option.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
-
+builder.Services.AddScoped<IActivityService, ActivityService>();
 
 
 var app = builder.Build();
