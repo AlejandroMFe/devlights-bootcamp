@@ -33,8 +33,18 @@ public class ActivityRepository : IActivityRepository
         return activity;
     }
 
-    public Activity Update(int Id, Activity activity)
+    public Activity Update(Activity UpdatedActivity)
     {
-        throw new NotImplementedException();
+        _context.Activities.Update(UpdatedActivity);
+        try
+        {
+            _context.SaveChangesAsync();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+
+        return UpdatedActivity;
     }
 }
