@@ -1,26 +1,34 @@
-﻿namespace GymAPI.Controllers
+﻿
+namespace GymAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ActivitiesController : ControllerBase
     {
         private readonly GymDbContext _context;
+        private readonly IMapper _mapper;
 
-        public ActivitiesController(GymDbContext context)
+        public ActivitiesController(GymDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Activities
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Activity>>> GetActivity()
+        public async Task<ActionResult<IEnumerable<ActivityDTO>>> GetActivity()
         {
             if (_context.Activities == null)
             {
                 return NotFound();
             }
 
-            return await _context.Activities.ToListAsync(); // work
+            var activites = await _context.Activities.ToListAsync();
+            var result = _mapper.Map<IEnumerable<ActivityDTO>>(activites);
+
+            return Ok(result);
+
+                //await _context.Activities.ToListAsync(); // work
             // use DTO to get the DaysAndHours list
             //return await _context.Activities.Include(o => o.DaysAndHours).ToListAsync();// work 
         }

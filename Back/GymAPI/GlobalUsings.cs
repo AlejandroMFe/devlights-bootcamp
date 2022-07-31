@@ -1,4 +1,7 @@
 ﻿global using GymAPI.Data;
+global using GymDataAccess.DTOs;
+global using GymAPI.Extensions;
+global using AutoMapper;
 global using GymBusiness.Services;
 global using GymDataAccess;
 global using GymDataAccess.Models;

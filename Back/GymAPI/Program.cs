@@ -1,4 +1,5 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<GymAPIContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("GymAPIContext") ?? throw new InvalidOperationException("Connection string 'GymAPIContext' not found.")));
@@ -14,9 +15,10 @@ builder.Services.AddControllers();
                 // solution for the circulet reference when in activities include daysAndHours - infinite loop
                 //.AddJsonOptions(x =>
                 //                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles); ;
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<DataSeedService>();
-
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 builder.Services.AddControllers().AddJsonOptions(option => option.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
 
