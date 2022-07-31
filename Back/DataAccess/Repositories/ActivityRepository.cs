@@ -27,9 +27,10 @@ public class ActivityRepository : IActivityRepository
         return await _context.Activities.Include(o => o.DaysAndHours).ToListAsync();
     }
 
-    public Activity GetbyId(int Id)
+    public async Task<Activity> GetbyIdAsync(int Id)
     {
-        throw new NotImplementedException();
+        var activity = await _context.Activities.FirstOrDefaultAsync(o => o.Id == Id);
+        return activity;
     }
 
     public Activity Update(int Id, Activity activity)
