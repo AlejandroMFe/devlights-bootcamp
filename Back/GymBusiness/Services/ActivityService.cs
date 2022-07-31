@@ -44,13 +44,25 @@ public class ActivityService : IActivityService
         throw new NotImplementedException();
     }
 
-    public Task<ActivityDTO> GetByIdAsync(int Id)
+    public async Task<ActivityDTO> GetByIdAsync(int Id)
     {
-        throw new NotImplementedException();
+        var activity = await  _repository.GetbyIdAsync(Id);
+        return _mapper.Map<ActivityDTO>(activity);
     }
 
-    public Task<ActivityDTO> UpdateAsync(int Id, ActivityDTO UpdatedActivity)
+    public async Task<ActivityDTO> UpdateAsync(int Id, ActivityDTO UpdatedActivity)
     {
-        throw new NotImplementedException();
+        var oldActivity = await _repository.GetbyIdAsync(Id);
+        
+        if (oldActivity == null) return null;
+
+        oldActivity.Name = UpdatedActivity.Name;
+        oldActivity.Price = UpdatedActivity.Price;
+        oldActivity.Capacity = UpdatedActivity.Capacity;
+        oldActivity.Professor = UpdatedActivity.Professor;
+        oldActivity.DaysAndHours = oldActivity.DaysAndHours;
+
+        _repository.Update(oldActivity);
+        return UpdatedActivity;
     }
 }

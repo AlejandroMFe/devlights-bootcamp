@@ -28,48 +28,19 @@
         [HttpGet("{id}")]
         public async Task<ActionResult<Activity>> GetActivity(int id)
         {
-            if (_context.Activities == null)
-            {
-                return NotFound();
-            }
-            var activity = await _context.Activities.FindAsync(id);
+            var activity = await _activityService.GetByIdAsync(id);
+            
+            if (activity == null) return NotFound();
 
-            if (activity == null)
-            {
-                return NotFound();
-            }
-
-            return activity;
+            return Ok(activity);
         }
 
         // PUT: api/Activities/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutActivity(int id, Activity activity)
+        public async Task<IActionResult> PutActivity(int id, ActivityDTO activity)
         {
-            if (id != activity.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(activity).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ActivityExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            await _activityService.UpdateAsync(id, activity);
             return NoContent();
         }
 
@@ -92,7 +63,7 @@
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteActivity(int id)
         {
-            var result  = await _activityService.DeleteActivityAsync(id);
+            var result = await _activityService.DeleteActivityAsync(id);
 
             if (!result) return NotFound();
 

@@ -29,7 +29,7 @@ public class ActivityRepository : IActivityRepository
 
     public async Task<Activity> GetbyIdAsync(int Id)
     {
-        var activity = await _context.Activities.FirstOrDefaultAsync(o => o.Id == Id);
+        var activity = await _context.Activities.Include(o => o.DaysAndHours).FirstOrDefaultAsync(o => o.Id == Id);
         return activity;
     }
 
