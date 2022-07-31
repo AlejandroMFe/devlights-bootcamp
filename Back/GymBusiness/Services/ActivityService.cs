@@ -1,19 +1,24 @@
 ﻿using AutoMapper;
-using GymDataAccess;
 using GymDataAccess.DTOs;
 using GymDataAccess.Models;
-using Microsoft.EntityFrameworkCore;
+using GymDataAccess.Repositories;
 
 namespace GymBusiness.Services;
 public class ActivityService : IActivityService
 {
-    private readonly GymDbContext _context;
+    private readonly IActivityRepository _repository;
     private readonly IMapper _mapper;
 
-    public ActivityService(GymDbContext context, IMapper mapper)
+    public ActivityService(IActivityRepository repository, IMapper mapper)
     {
-        _context = context;
+        _repository = repository;
         _mapper = mapper;
+    }
+    public async Task<IEnumerable<ActivityDTO>> GetAllAsync()
+    {
+        var activites = await _repository.GetActivities();
+        var result = _mapper.Map<IEnumerable<ActivityDTO>>(activites);
+        return result;
     }
 
     public void AddActivity(ActivityDTO activity)
@@ -26,12 +31,6 @@ public class ActivityService : IActivityService
         throw new NotImplementedException();
     }
 
-    public async Task<IEnumerable<ActivityDTO>> GetAllAsync()
-    {
-        var activites = await _context.Activities.ToListAsync();
-        var result = _mapper.Map<IEnumerable<ActivityDTO>>(activites);
-        return result;
-    }
 
     public Task<IEnumerable<Student>> GetAllStudentsAsync(int ActivityId)
     {

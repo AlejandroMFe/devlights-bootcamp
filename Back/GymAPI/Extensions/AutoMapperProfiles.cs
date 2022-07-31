@@ -1,8 +1,6 @@
-﻿using AutoMapper;
+﻿namespace GymAPI.Extensions;
 
-namespace GymAPI.Extensions;
-
-public class AutoMapperProfiles:Profile
+public class AutoMapperProfiles : Profile
 {
     public AutoMapperProfiles()
     {

@@ -16,6 +16,6 @@ public class Activity
 
     // Relations
     // many-to-many
-    public ICollection<Student> Students { get; set; }  
-    public ICollection<DayAndHour> DaysAndHours { get; set; } 
+    public ICollection<Student> Students { get; set; }
+    public ICollection<DayAndHour> DaysAndHours { get; set; }
 }

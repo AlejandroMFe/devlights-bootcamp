@@ -1,4 +1,6 @@
 ﻿
+using GymDataAccess.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<GymAPIContext>(options =>
@@ -12,15 +14,16 @@ builder.Services.AddSwaggerGen();
 
 // Add services to the container.
 builder.Services.AddControllers();
-                // solution for the circulet reference when in activities include daysAndHours - infinite loop
-                //.AddJsonOptions(x =>
-                //                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles); ;
+// solution for the circulet reference when in activities include daysAndHours - infinite loop
+//.AddJsonOptions(x =>
+//                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles); ;
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<DataSeedService>();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 builder.Services.AddControllers().AddJsonOptions(option => option.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 builder.Services.AddScoped<IActivityService, ActivityService>();
+builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
 
 
 var app = builder.Build();
