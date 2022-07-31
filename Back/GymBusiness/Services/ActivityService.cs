@@ -16,7 +16,7 @@ public class ActivityService : IActivityService
     }
     public async Task<IEnumerable<ActivityDTO>> GetAllAsync()
     {
-        var activites = await _repository.GetActivities();
+        var activites = await _repository.GetActivitiesAsync();
         var result = _mapper.Map<IEnumerable<ActivityDTO>>(activites);
         return result;
     }

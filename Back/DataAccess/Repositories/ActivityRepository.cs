@@ -22,7 +22,7 @@ public class ActivityRepository : IActivityRepository
         return true;
     }
 
-    public async Task<IEnumerable<Activity>> GetActivities()
+    public async Task<IEnumerable<Activity>> GetActivitiesAsync()
     {
         return await _context.Activities.Include(o => o.DaysAndHours).ToListAsync();
     }
