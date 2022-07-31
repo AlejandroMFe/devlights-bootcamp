@@ -21,5 +21,5 @@ public interface IActivityService
     public Task<ActivityDTO> UpdateAsync(int Id, ActivityDTO UpdatedActivity);
 
     // Delete
-    public Task<bool> Delete(int Id);
+    public Task<bool> DeleteActivityAsync(int Id);
 }

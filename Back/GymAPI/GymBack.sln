@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymAPI", "GymAPI.csproj", "{97E4FB80-8F2D-4359-9998-55638BF43BCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymAPI", "GymAPI.csproj", "{97E4FB80-8F2D-4359-9998-55638BF43BCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymDataAccess", "..\DataAccess\GymDataAccess.csproj", "{E057D54B-3433-42A2-9365-1D3DE3604511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymDataAccess", "..\DataAccess\GymDataAccess.csproj", "{E057D54B-3433-42A2-9365-1D3DE3604511}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymBusiness", "..\GymBusiness\GymBusiness.csproj", "{6769CBC5-16A8-4F9A-9E85-673AA0B8C68C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymBusiness", "..\GymBusiness\GymBusiness.csproj", "{6769CBC5-16A8-4F9A-9E85-673AA0B8C68C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

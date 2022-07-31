@@ -1,17 +1,16 @@
-﻿
-namespace GymAPI.Controllers
+﻿namespace GymAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ActivitiesController : ControllerBase
     {
-        private readonly GymDbContext _context;
         private readonly IActivityService _activityService;
+        private readonly GymDbContext _context;
 
-        public ActivitiesController(GymDbContext context, IActivityService activityService)
+        public ActivitiesController(IActivityService activityService, GymDbContext context)
         {
-            _context = context;
             _activityService = activityService;
+            _context = context;
         }
 
         // GET: api/Activities
@@ -93,18 +92,9 @@ namespace GymAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteActivity(int id)
         {
-            if (_context.Activities == null)
-            {
-                return NotFound();
-            }
-            var activity = await _context.Activities.FindAsync(id);
-            if (activity == null)
-            {
-                return NotFound();
-            }
+            var result  = await _activityService.DeleteActivityAsync(id);
 
-            _context.Activities.Remove(activity);
-            await _context.SaveChangesAsync();
+            if (!result) return NotFound();
 
             return NoContent();
         }

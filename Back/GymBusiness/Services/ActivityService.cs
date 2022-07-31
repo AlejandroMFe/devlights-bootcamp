@@ -26,11 +26,18 @@ public class ActivityService : IActivityService
         throw new NotImplementedException();
     }
 
-    public Task<bool> Delete(int Id)
+    public async Task<bool> DeleteActivityAsync(int Id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _repository.DeleteAsync(Id);
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
-
 
     public Task<IEnumerable<Student>> GetAllStudentsAsync(int ActivityId)
     {
