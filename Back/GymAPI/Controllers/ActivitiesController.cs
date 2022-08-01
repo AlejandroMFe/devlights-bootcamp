@@ -39,13 +39,11 @@
         [HttpGet("{id}/Students")]
         public async Task<ActionResult<Activity>> GetStudentsByActivity(int id)
         {
-            //TODO get all students name from the id activity
+            var students = await _activityService.GetStudentsAsync(id);
 
-            var activity = await _activityService.GetByIdAsync(id);
+            if (students == null) return NotFound();
 
-            if (activity == null) return NotFound();
-
-            return Ok(activity);
+            return Ok(students);
         }
 
 

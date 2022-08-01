@@ -40,10 +40,11 @@ public class ActivityService : IActivityService
         }
     }
 
-    public Task<IEnumerable<Student>> GetAllStudentsAsync(int ActivityId)
+    public async Task<IEnumerable<StudentDTO>> GetStudentsAsync(int ActivityId)
     {
-
-        throw new NotImplementedException();
+        var students = await _repository.GetStudentsAsync(ActivityId);
+        var result =  _mapper.Map<IEnumerable<Student>,IEnumerable<StudentDTO>>(students);
+        return result;
     }
 
     public async Task<ActivityDTO> GetByIdAsync(int Id)
