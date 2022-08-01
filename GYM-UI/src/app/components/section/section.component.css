@@ -1,0 +1,41 @@
+
+/*------------------------------------LARGE VIEW------------------------------------*/
+@media (min-width: 48.063rem) {
+    .container-img{
+        display: flex;
+        max-width: 90rem;
+        margin: 0 auto;
+        padding:0 2rem 2rem 2.5rem;
+        max-height: fit-content;
+        
+    }
+    .img-responsive{
+        width: 70%;
+        height: 90%;
+        margin: auto;
+    }
+    .map-google{
+        display: flex;
+        margin: 0 auto;
+        width: 600px;
+        height: 400px;
+    }
+}
+/*------------------------------------SMALL VIEW------------------------------------*/
+@media only screen 
+  and (min-width: 7.5rem) 
+  and (max-width: 31rem)
+ {  
+    .img-responsive{
+        display: flex;
+        margin: 0 auto;
+        width: 80%;
+        height: 50%;
+    }
+    .map-google{
+        display: flex;
+        margin: 0 auto;
+        width: 300px;
+        height: 200px;
+    }
+}

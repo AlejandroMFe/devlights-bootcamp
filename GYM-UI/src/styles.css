@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color:  #3b3646;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    color: rgb(184, 167, 167);
+    line-height: 1.42857143;
+    margin: 0;
+    padding: 0;
+}
+h1,h2{
+    text-align: center;
+}
+footer{
+    text-align: center;
+}
