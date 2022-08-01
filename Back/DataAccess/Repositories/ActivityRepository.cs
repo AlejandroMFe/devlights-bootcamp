@@ -11,6 +11,22 @@ public class ActivityRepository : IActivityRepository
         _context = context;
     }
 
+    public async Task<Activity> AddAsync(Activity activity)
+    {
+        try
+        {
+            await _context.Activities.AddAsync(activity);
+            await _context.SaveChangesAsync();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+        return activity;
+    }
+
     public async Task<bool> DeleteAsync(int Id)
     {
         var activity = await _context.Activities.FindAsync(Id);

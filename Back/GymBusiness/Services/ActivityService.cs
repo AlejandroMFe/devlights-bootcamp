@@ -21,9 +21,10 @@ public class ActivityService : IActivityService
         return result;
     }
 
-    public void AddActivity(ActivityDTO activity)
+    public async Task AddActivityAsync(ActivityDTO activity)
     {
-        throw new NotImplementedException();
+        var newActivity = _mapper.Map<ActivityDTO, Activity>(activity);
+        await _repository.AddAsync(newActivity);
     }
 
     public async Task<bool> DeleteActivityAsync(int Id)

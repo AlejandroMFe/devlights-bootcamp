@@ -47,16 +47,11 @@
         // POST: api/Activities
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Activity>> PostActivity(Activity activity)
+        public async Task<ActionResult<Activity>> PostActivity(ActivityDTO activity)
         {
-            if (_context.Activities == null)
-            {
-                return Problem("Entity set 'GymAPIContext.Activities'  is null.");
-            }
-            _context.Activities.Add(activity);
-            await _context.SaveChangesAsync();
+            await _activityService.AddActivityAsync(activity);
 
-            return CreatedAtAction("GetActivity", new { id = activity.Id }, activity);
+             return CreatedAtAction("GetActivity", new { name = activity.Name }, activity);
         }
 
         // DELETE: api/Activities/5

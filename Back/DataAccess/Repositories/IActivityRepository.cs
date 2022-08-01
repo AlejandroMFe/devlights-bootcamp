@@ -3,8 +3,9 @@
 namespace GymDataAccess.Repositories;
 public interface IActivityRepository
 {
-    public Task<Activity> GetbyIdAsync(int Id);
+    public Task<Activity> GetbyIdAsync(int id);
     public Task<IEnumerable<Activity>> GetActivitiesAsync();
-    public Activity Update(Activity UpdateActivity);
-    public Task<bool> DeleteAsync(int Id);
+    public Activity Update(Activity updateActivity);
+    public Task<bool> DeleteAsync(int id);
+    public Task<Activity> AddAsync(Activity activity);
 }

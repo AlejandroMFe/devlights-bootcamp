@@ -6,7 +6,7 @@ namespace GymBusiness.Services;
 public interface IActivityService
 {
     // CreateActivity
-    public void AddActivity(ActivityDTO activity);
+    public Task AddActivityAsync(ActivityDTO activity);
 
     // GetAll
     public Task<IEnumerable<ActivityDTO>> GetAllAsync();
