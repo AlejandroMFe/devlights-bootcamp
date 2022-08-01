@@ -4,7 +4,7 @@ public class AutoMapperProfiles : Profile
 {
     public AutoMapperProfiles()
     {
-        CreateMap<Activity, ActivityDTO>();
-        CreateMap<DayAndHour, DayAndHourDTO>();
+        CreateMap<Activity, ActivityDTO>().ReverseMap();
+        CreateMap<DayAndHour, DayAndHourDTO>().ReverseMap();
     }
 }
