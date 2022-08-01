@@ -1,19 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace GymDataAccess.Models;
+﻿namespace GymDataAccess.Models;
 
 
 public class Activity
 {
+    public Activity()
+    {
+        Students = new HashSet<Student>();
+        DaysAndHours = new HashSet<DayAndHour>();
+    }
     public int Id { get; set; }
     public string Name { get; set; }
     public string Professor { get; set; }
     public int Capacity { get; set; }
-    public string Hour { get; set; }
     public float Price { get; set; }
 
     // Relations
-    public int StudentId { get; set; }
-    public IEnumerable<Student> Students { get; set; } = Enumerable.Empty<Student>();
-    public List<DayAndHour> DaysAndHours { get; set; }
+    // many-to-many
+    public ICollection<Student> Students { get; set; }
+    public ICollection<DayAndHour> DaysAndHours { get; set; }
 }

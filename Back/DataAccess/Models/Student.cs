@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GymDataAccess.Models;
+﻿namespace GymDataAccess.Models;
 public class Student
 {
+    public Student()
+    {
+        Activities = new HashSet<Activity>();
+    }
     public int Id { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
@@ -16,6 +13,5 @@ public class Student
     public string PhoneNumber { get; set; }
 
     // Relations
-    public int ActivityId { get; set; }
-    public IEnumerable<Activity> Activities { get; set; } = Enumerable.Empty<Activity>();
+    public ICollection<Activity> Activities { get; set; }
 }
