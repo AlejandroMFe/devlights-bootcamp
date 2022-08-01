@@ -20,7 +20,6 @@ public class ActivityRepository : IActivityRepository
         }
         catch (Exception)
         {
-
             throw;
         }
 
@@ -51,9 +50,9 @@ public class ActivityRepository : IActivityRepository
 
     public Activity Update(Activity UpdatedActivity)
     {
-        _context.Activities.Update(UpdatedActivity);
         try
         {
+            _context.Update(UpdatedActivity);
             _context.SaveChangesAsync();
         }
         catch (Exception)

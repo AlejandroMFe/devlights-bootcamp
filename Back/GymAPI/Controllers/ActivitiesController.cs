@@ -29,11 +29,25 @@
         public async Task<ActionResult<Activity>> GetActivity(int id)
         {
             var activity = await _activityService.GetByIdAsync(id);
-            
+
             if (activity == null) return NotFound();
 
             return Ok(activity);
         }
+
+        // GET: api/Activities/5/Students
+        [HttpGet("{id}/Students")]
+        public async Task<ActionResult<Activity>> GetStudentsByActivity(int id)
+        {
+            //TODO get all students name from the id activity
+
+            var activity = await _activityService.GetByIdAsync(id);
+
+            if (activity == null) return NotFound();
+
+            return Ok(activity);
+        }
+
 
         // PUT: api/Activities/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -51,7 +65,7 @@
         {
             await _activityService.AddActivityAsync(activity);
 
-             return CreatedAtAction("GetActivity", new { name = activity.Name }, activity);
+            return CreatedAtAction("GetActivity", new { name = activity.Name }, activity);
         }
 
         // DELETE: api/Activities/5
@@ -65,9 +79,9 @@
             return NoContent();
         }
 
-        private bool ActivityExists(int id)
-        {
-            return (_context.Activities?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
+        //private bool ActivityExists(int id)
+        //{
+        //    return (_context.Activities?.Any(e => e.Id == id)).GetValueOrDefault();
+        //}
     }
 }

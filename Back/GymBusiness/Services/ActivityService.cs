@@ -42,19 +42,20 @@ public class ActivityService : IActivityService
 
     public Task<IEnumerable<Student>> GetAllStudentsAsync(int ActivityId)
     {
+
         throw new NotImplementedException();
     }
 
     public async Task<ActivityDTO> GetByIdAsync(int Id)
     {
-        var activity = await  _repository.GetbyIdAsync(Id);
+        var activity = await _repository.GetbyIdAsync(Id);
         return _mapper.Map<ActivityDTO>(activity);
     }
 
     public async Task<ActivityDTO> UpdateAsync(int Id, ActivityDTO UpdatedActivity)
     {
         var oldActivity = await _repository.GetbyIdAsync(Id);
-        
+
         if (oldActivity == null) return null;
 
         oldActivity.Name = UpdatedActivity.Name;
