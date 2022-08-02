@@ -7,5 +7,6 @@ public class AutoMapperProfiles : Profile
         CreateMap<Student, StudentDTO>().ReverseMap();
         CreateMap<Activity, ActivityDTO>().ReverseMap();
         CreateMap<DayAndHour, DayAndHourDTO>().ReverseMap();
+        CreateMap<AppUser, UserDTO>().ReverseMap();
     }
 }
