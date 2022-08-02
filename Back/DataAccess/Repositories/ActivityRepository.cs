@@ -51,7 +51,7 @@ public class ActivityRepository : IActivityRepository
     public async Task<IEnumerable<Student>> GetStudentsAsync(int activityId)
     {
         var activity = await _context.Activities.Include(s => s.Students).FirstOrDefaultAsync(a => a.Id == activityId);
-        return  activity.Students.ToList();
+        return activity.Students.ToList();
     }
 
     public Activity Update(Activity UpdatedActivity)

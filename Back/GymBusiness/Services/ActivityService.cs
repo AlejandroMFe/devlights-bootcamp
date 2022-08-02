@@ -43,7 +43,7 @@ public class ActivityService : IActivityService
     public async Task<IEnumerable<StudentDTO>> GetStudentsAsync(int ActivityId)
     {
         var students = await _repository.GetStudentsAsync(ActivityId);
-        var result =  _mapper.Map<IEnumerable<Student>,IEnumerable<StudentDTO>>(students);
+        var result = _mapper.Map<IEnumerable<Student>, IEnumerable<StudentDTO>>(students);
         return result;
     }
 
