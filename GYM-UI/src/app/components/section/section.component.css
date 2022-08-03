@@ -1,9 +1,4 @@
-/*------------------ROOT--------------------------*/
-:root{
-    --bg_color : #222629;
-    --heading: #86C232;
-    --side: white;
-  }
+
 /*------------------------------------LARGE VIEW------------------------------------*/
 @media (min-width: 48.063rem) {
     .container-img{
@@ -12,8 +7,7 @@
         margin: 0 auto;
         padding:0 2rem 2rem 2.5rem;
         max-height: fit-content;
-        background-image: url(../../../assets/fitness.jpg);
-        background-size: cover; 
+        
     }
     .img-responsive{
         width: 70%;
@@ -23,54 +17,8 @@
     .map-google{
         display: flex;
         margin: 0 auto;
-        width: 1050px;
+        width: 600px;
         height: 400px;
-        padding: 1rem;
-    }
-    .map-add{
-        background-color: rgb(59, 55, 50);
-        margin-top:2rem;
-        margin-bottom: 2rem;
-    }
-    h2{
-        color: white;
-        font-size: 120px;
-        text-shadow: 5px 5px 0 rgb(76, 170, 146);
-        position: relative;
-    }
-    
-    h2:after{
-        content: attr(data-shadow);
-        position: absolute;
-        top: 8px;
-        left: 10px;
-        z-index: -1;
-        text-shadow: none;
-        background-image: linear-gradient(45deg, transparent 45%, white 45%, white 55%, transparent 0);
-        background-size: 10px 10px;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shadowAnimation 15s linear infinite;
-    }
-    .title-container{
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
-        width: 100%;
-        padding: 0 2rem;
-    }
-    @keyframes shadowAnimation{
-        0% {
-            background-position:100% -100%;
-        }
-    }
-
-    h3{
-      text-align: center;
-    }
-    a{
-        text-decoration: none;
-        color: white;
     }
 }
 /*------------------------------------SMALL VIEW------------------------------------*/
