@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin-view.component.html',
   styleUrls: ['./admin-view.component.css']
 })
-export class AdminViewComponent implements OnInit {
+export class AdminViewComponent{
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  description = ['Ver lista de estudiantes', 'Ver lista de estudiantes por clase', 'Ver lista de clases'];
 
 }

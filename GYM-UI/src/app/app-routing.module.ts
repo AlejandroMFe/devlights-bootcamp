@@ -6,7 +6,9 @@ import { About } from './components/About/about.component';
 import { Login } from './components/Login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ClassesComponent } from './components/classes/classes.component';
-
+import { ListaStudentComponent } from './components/admin/lista-student/lista-student.component';
+import { ListaStudentClassComponent } from './components/admin/lista-student-class/lista-student-class.component';
+import {ClassComponent} from './components/admin/class/class.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +34,18 @@ export const routes: Routes = [
   {
     path: 'classes',
     component: ClassesComponent
+  },
+  {
+    path: 'lista-student',
+    component: ListaStudentComponent
+  },
+  {
+    path: 'lista-student-class',
+    component: ListaStudentClassComponent
+  },
+  {
+    path: 'lista-class',
+    component: ClassComponent
   }
 ];
 

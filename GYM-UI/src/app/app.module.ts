@@ -16,6 +16,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { AdminViewComponent } from './components/admin/admin-view.component';
 import { StudentViewComponent } from './components/student-view/student-view.component';
 import { ClassesComponent } from './components/classes/classes.component';
+import { ListaStudentComponent } from './components/admin/lista-student/lista-student.component';
+import { ListaStudentClassComponent } from './components/admin/lista-student-class/lista-student-class.component';
+import { ClassComponent } from './components/admin/class/class.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { ClassesComponent } from './components/classes/classes.component';
     RegisterComponent,
     AdminViewComponent,
     StudentViewComponent,
-    ClassesComponent
+    ClassesComponent,
+    ListaStudentComponent,
+    ListaStudentClassComponent,
+    ClassComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<div>
+    <h1>Estudiantes anotados</h1>
+    <div class="list-student">
+        <!--using a for loop, show all students-->
+        <div *ngFor="let student of students">
+            <div class="student-card">
+                <div class="student-card-header">
+                    <h3>{{student.name}}</h3>
+                    <p>{{student.email}}</p>
+                </div>
+                <div class="student-card-body">
+         
+                    <p>{{student.class}}</p>
+                    <button>
+                        Edit Student
+                    </button>
+                </div>
+            </div>
+    </div>
+</div>
