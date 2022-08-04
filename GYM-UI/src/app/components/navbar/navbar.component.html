@@ -19,6 +19,20 @@
             <a class="nav-link" routerLink="/login">LOGIN</a>
           </li>
         </ul>
+
+        <!-- <div class="btn-group" dropdown *ngIf="this.authService.currentUser$ | async">
+          <a id="button-basic" dropdownToggle class="dropdown-toggle"
+                  aria-controls="dropdown-basic">
+            Welcome User <span class="caret"></span></a>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+              role="menu" aria-labelledby="button-basic">
+            <li role="menuitem"><a class="dropdown-item" href="#">Edit Profile</a></li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+        </div> -->
+
       </div>
     </div>
   </nav>

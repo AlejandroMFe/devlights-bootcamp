@@ -1,10 +1,14 @@
 ﻿
 using GymDataAccess.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var provider = builder.Services.BuildServiceProvider();
+var configuration = provider.GetRequiredService<IConfiguration>();
 
 builder.Services.AddDbContext<GymAPIContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("GymAPIContext") ?? throw new InvalidOperationException("Connection string 'GymAPIContext' not found.")));
@@ -21,6 +25,16 @@ builder.Services.AddControllers();
 //.AddJsonOptions(x =>
 //                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles); ;
 
+builder.Services.AddIdentityCore<AppUser>(opt =>
+{
+    opt.SignIn.RequireConfirmedEmail = false;
+})
+    .AddRoles<AppRole>()
+    .AddRoleManager<RoleManager<AppRole>>()
+    .AddSignInManager<SignInManager<AppUser>>()
+    .AddRoleValidator<RoleValidator<AppRole>>()
+    .AddEntityFrameworkStores<GymDbContext>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<DataSeedService>();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
@@ -28,32 +42,40 @@ builder.Services.AddControllers().AddJsonOptions(option => option.JsonSerializer
 builder.Services.AddScoped<IActivityService, ActivityService>();
 builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("[TokenKey]")),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TokenKey"])),
         ValidateIssuer = false,
         ValidateAudience = false
     };
 }
 );
 
+builder.Services.AddCors();
+
+builder.Services.AddAuthorization(opt =>
+{
+    opt.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+});
 var app = builder.Build();
 
 // Seed Data
-SeedData(app);
+//SeedData(app);
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseCors(p => p.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseAuthentication();
 app.UseAuthorization();
 
