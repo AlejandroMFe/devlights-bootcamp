@@ -21,6 +21,10 @@ import { ListaStudentClassComponent } from './components/admin/lista-student-cla
 import { ClassComponent } from './components/admin/class/class.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { ActivitiesComponent } from './activities/activities.component';
+import { Activity } from './_models/activity';
+import { ActivityComponent } from './activity/activity.component';
+
 
 
 
@@ -41,7 +45,8 @@ import { ToastrModule } from 'ngx-toastr';
     ListaStudentComponent,
     ListaStudentClassComponent,
     ClassComponent,
-
+    ActivitiesComponent,
+    ActivityComponent,
   ],
   imports: [
     BrowserModule,
