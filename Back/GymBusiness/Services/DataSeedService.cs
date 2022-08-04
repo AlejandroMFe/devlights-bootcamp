@@ -116,7 +116,7 @@ public class DataSeedService
                     Email = "john@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>(new[]
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -130,7 +130,7 @@ public class DataSeedService
                     Email = "mary@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>(new[]
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -144,7 +144,7 @@ public class DataSeedService
                     Email = "bob@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>(new[]
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -158,7 +158,7 @@ public class DataSeedService
                     Email = "jane@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>(new[]
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -172,7 +172,7 @@ public class DataSeedService
                     Email = "tom@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>(new[]
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -186,7 +186,7 @@ public class DataSeedService
                     Email = "john@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>(new[]
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -200,7 +200,7 @@ public class DataSeedService
                     Email = "mary@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>()
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -214,7 +214,7 @@ public class DataSeedService
                     Email = "bob@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>()
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -228,7 +228,7 @@ public class DataSeedService
                     Email = "jane@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>()
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
@@ -242,7 +242,7 @@ public class DataSeedService
                     Email = "tom@gmail.com",
                     PhoneNumber = "123456789",
                     Birthday = new DateTime(2000, 1, 1),
-                    Password = "123456",
+                    //Password = "123456",
                     Activities = new List<Activity>()
                     {
                         _context.Activities.FirstOrDefault(a => a.Id == 1),
