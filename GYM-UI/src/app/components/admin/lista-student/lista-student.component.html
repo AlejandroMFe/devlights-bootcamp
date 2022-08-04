@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">GYM APP ADMINISTRATION</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lista-class">Clases</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lista-student">Estudiantes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lista-student-class">Estudiantes por clases</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div>
+    <h1>Estudiantes anotados</h1>
+    <div class="list-student">
+        <!--using a for loop, show all students-->
+        <div *ngFor="let student of students">
+            <div class="student-card">
+                <div class="student-card-header">
+                    <h3>{{student.name}}</h3>
+                    <p>{{student.email}}</p>
+                </div>
+                <div class="student-card-body">
+         
+                    <p>{{student.class}}</p>
+                    <button>
+                        Edit Student
+                    </button>
+                </div>
+            </div>
+    </div>
+</div>
