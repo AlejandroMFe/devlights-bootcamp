@@ -1,20 +1,6 @@
 <Navbar></Navbar>
 <div class="register-wrapper">
 	<div class="register-block">
-<!-- <section>
-	<div class="register-wrapper">
-	<div class="register-block">
-	<h3 class="register-title">Create an account</h3>
-		<p>Create an account using the form below.</p>
-		<form action="">
-		<input type="email" placeholder="Enter your email" required/>
-		<input type="password" placeholder="Enter your password" required/>
-		<input type="submit" value="Create my account"/>
-		<p>Already have an account? <a routerLink="/login" class="log-in">Login!</a></p>
-		</form>
-	</div>
-	</div>
-</section> -->
 	<form [formGroup]="registerForm" (ngSubmit)="submitRegister()">
 		<div class="mb-3">
 			<label for="InputUserName" class="form-label">Username</label>
