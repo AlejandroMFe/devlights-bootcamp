@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,8 @@ import { ClassesComponent } from './components/classes/classes.component';
 import { ListaStudentComponent } from './components/admin/lista-student/lista-student.component';
 import { ListaStudentClassComponent } from './components/admin/lista-student-class/lista-student-class.component';
 import { ClassComponent } from './components/admin/class/class.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -44,7 +46,10 @@ import { ClassComponent } from './components/admin/class/class.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot([
       { path: 'pricing', component: Pricing },
       {path: 'login', component: Login},

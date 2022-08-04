@@ -2,7 +2,13 @@
 
 public record UserDTO(string UserName, string Token);
 public record LoginDTO(string UserName, string Password);
-public record RegisterDTO(string Username, string Password);
+public record RegisterDTO(
+    string Username,
+    string Password,
+    string Name,
+    string PhoneNumber,
+    string Email,
+    DateTime Birthday);
 public record DayAndHourDTO(DayOfWeek Day, string HourStart, string HourEnd);
 //public record StudentDTO(
 //    string Email, 

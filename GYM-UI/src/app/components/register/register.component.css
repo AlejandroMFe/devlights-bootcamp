@@ -146,3 +146,8 @@ body{
           margin:  3rem auto auto auto;
      }
   }
+
+#Help{
+     font-size: small;
+     color: white;
+}
