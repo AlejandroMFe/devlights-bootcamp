@@ -5,19 +5,49 @@ import { Pricing } from './components/Pricing/Pricing.component';
 import { About } from './components/About/about.component';
 import { Login } from './components/Login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AuthGuard } from './_guards/auth.guard';
+import { ClassesComponent } from './components/classes/classes.component';
+import { ListaStudentComponent } from './components/admin/lista-student/lista-student.component';
+import { ListaStudentClassComponent } from './components/admin/lista-student-class/lista-student-class.component';
+import {ClassComponent} from './components/admin/class/class.component';
 
 
 export const routes: Routes = [
-  { path: '', runGuardsAndResolvers: 'always', canActivate:[AuthGuard], children: [ 
-    { path: '', component: HomeComponent },
-    { path: 'about', component: About },
-    { path: 'post/:variable', component: Pricing },
-  ]},
-
-  {path: 'login', component: Login },
-  { path: 'register', component: RegisterComponent }
-  
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'about',
+    component: About
+  },
+  {
+    path: 'post/:variable',
+    component: Pricing 
+  },
+  {
+    path: 'login',
+    component: Login
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'classes',
+    component: ClassesComponent
+  },
+  {
+    path: 'lista-student',
+    component: ListaStudentComponent
+  },
+  {
+    path: 'lista-student-class',
+    component: ListaStudentClassComponent
+  },
+  {
+    path: 'lista-class',
+    component: ClassComponent
+  }
 ];
 
 @NgModule({
