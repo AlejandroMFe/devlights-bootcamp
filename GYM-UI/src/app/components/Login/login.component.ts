@@ -33,9 +33,7 @@ export class Login implements OnInit {
           console.log(this.loginForm.value);
           this.auth.login(this.loginForm.value).subscribe({
             //next (paso exitoso)
-            next: (user) => {
-              console.log(user), this.router.navigate(['/pricing']);
-            },
+            next: (user) => { console.log(user), this.router.navigate(['/pricing']); },
             //nombre | (nombre) | () => { line1; line2 }
             //error (paso erroneo)
             error: (error) => { console.log(error); },

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Register } from '../_models/register';
 import { User } from '../_models/user';
 //import { Register } from '../_models/register';
 
@@ -44,17 +45,17 @@ export class AuthService {
     return !!user;
   }
 
-  // register(register: Register){
-  //   return this.httpClient.post(this.baseUrl + 'account/register', register).pipe(
-  //     map((response: User) => {
-  //       const user = response;
-  //       if(user){
-  //         localStorage.setItem('user', JSON.stringify(user));
-  //         this.currentUserSubject.next(user);
-  //       }
-  //     })
-  //   );
-  // }
+  register(register: Register){
+    return this.httpClient.post(this.baseUrl + 'account/register', register).pipe(
+      map((response: any) => {
+        const user = response;
+        if(user){
+          localStorage.setItem('user', JSON.stringify(user));
+          this.currentUserSubject.next(user);
+        }
+      })
+    );
+  }
 
   setCurrentUser(user: User){
     this.currentUserSubject.next(user);

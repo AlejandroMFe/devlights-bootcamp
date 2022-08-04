@@ -19,11 +19,12 @@ import { ClassesComponent } from './components/classes/classes.component';
 import { ListaStudentComponent } from './components/admin/lista-student/lista-student.component';
 import { ListaStudentClassComponent } from './components/admin/lista-student-class/lista-student-class.component';
 import { ClassComponent } from './components/admin/class/class.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '@angular/common/http';
 import { ActivitiesComponent } from './activities/activities.component';
 import { Activity } from './_models/activity';
 import { ActivityComponent } from './activity/activity.component';
+
 
 
 
@@ -50,9 +51,9 @@ import { ActivityComponent } from './activity/activity.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
       { path: 'pricing', component: Pricing },
