@@ -23,7 +23,7 @@ export class ListaStudentComponent{
       class: 'zumba'
     },
     {
-      name: 'Juan',
+      name: 'Juana',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
@@ -31,7 +31,7 @@ export class ListaStudentComponent{
     }
     ,
     {
-      name: 'Juan',
+      name: 'Julian',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
@@ -39,7 +39,7 @@ export class ListaStudentComponent{
     }
     ,
     {
-      name: 'Juan',
+      name: 'Juan Pablo',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
@@ -47,7 +47,7 @@ export class ListaStudentComponent{
     }
     ,
     {
-      name: 'Juan',
+      name: 'Sebastian',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
@@ -55,7 +55,7 @@ export class ListaStudentComponent{
     }
     ,
     {
-      name: 'Juan',
+      name: 'JMarilyn',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
@@ -63,7 +63,7 @@ export class ListaStudentComponent{
     }
     ,
     {
-      name: 'Juan',
+      name: 'Ryan',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
@@ -71,42 +71,42 @@ export class ListaStudentComponent{
     }
     ,
     {
-      name: 'Juan',
+      name: 'Steffanie',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
-      class: 'tumbling'
+      class: 'Pilates'
     }
     ,
     {
-      name: 'Juan',
-      lastname: 'Perez',
+      name: 'Juana',
+      lastname: 'Sanchez',
       age: '20',
       email: 'applied@example.com',
-      class: 'tumbling'
+      class: 'Pilates'
     }
     ,
     {
-      name: 'Juan',
+      name: 'Leandro',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
-      class: 'tumbling'
+      class: 'Pilates'
     }
     ,
     {
-      name: 'Juan',
-      lastname: 'Perez',
+      name: 'Julian',
+      lastname: 'Perezas',
       age: '20',
       email: 'applied@example.com',
-      class: 'tumbling'
+      class: 'Pilates'
     }
     ,
     {
-      name: 'Juan',
+      name: 'Ana',
       lastname: 'Perez',
       age: '20',
       email: 'applied@example.com',
-      class: 'tumbling'
+      class: 'Pilates'
     }];
 }

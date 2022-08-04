@@ -19,6 +19,7 @@ import { ClassesComponent } from './components/classes/classes.component';
 import { ListaStudentComponent } from './components/admin/lista-student/lista-student.component';
 import { ListaStudentClassComponent } from './components/admin/lista-student-class/lista-student-class.component';
 import { ClassComponent } from './components/admin/class/class.component';
+import { NavbaradminComponent } from './components/admin/navbaradmin/navbaradmin.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ClassComponent } from './components/admin/class/class.component';
     ClassesComponent,
     ListaStudentComponent,
     ListaStudentClassComponent,
-    ClassComponent
+    ClassComponent,
+    NavbaradminComponent
   ],
   imports: [
     BrowserModule,
