@@ -4,12 +4,12 @@
     <h2>Login</h2>
     <form class="login-form" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
       <div class="user-box">
-        <input type="text" name="" required="" formControlName="username">
-        <label>Username</label>
+        <input type="text" name="username" required="" formControlName="username">
+        <label for="username">Username</label>
       </div>
       <div class="user-box">
-        <input type="password" name="" required="" formControlName="password">
-        <label>Password</label>
+        <input type="password" name="password" required="" formControlName="password">
+        <label for="password">Password</label>
       </div>
       <div class="button">
         <button type="submit">Sign in</button>
@@ -23,10 +23,12 @@
         Submit
       </a>
       <p>Don't have an account? <a routerLink="/register">Register!</a></p>
+      <Footer></Footer>
     </form>
-    <p>Copyright © Grupo 6 Devlights</p>
   </div>
+  
 </div>
+
 
 
 <!-- <div class="container">
