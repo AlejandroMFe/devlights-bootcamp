@@ -15,9 +15,19 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/about">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/login">LOGIN</a>
-          </li>
+            <li class="nav-item" *ngIf="currentUser$  ; else elseBlock">
+              <a style="cursor: pointer;" class="nav-link" (click)="logout()">LOGOUT</a>
+            </li>  
+          <ng-template #elseBlock>
+            <li class="nav-item" >
+              <a class="nav-link" routerLink="/login">LOGIN</a>
+            </li>  
+          </ng-template>
+          <div>
+            <li class="nav-item">
+              {{this.currentUser.userName}}
+            </li>
+          </div>
         </ul>
 
         <!-- <div class="btn-group" dropdown *ngIf="this.authService.currentUser$ | async">

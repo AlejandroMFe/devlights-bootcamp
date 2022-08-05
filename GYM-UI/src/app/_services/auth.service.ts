@@ -14,6 +14,7 @@ export class AuthService {
   currentUser: User = new User();
   private currentUserSubject = new BehaviorSubject<User>(this.currentUser);
   currentUser$ = this.currentUserSubject.asObservable();
+  isLoggedIn = false;
 
   constructor(private httpClient: HttpClient) { 
     if(this.loggedIn()){
