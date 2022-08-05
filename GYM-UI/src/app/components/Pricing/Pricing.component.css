@@ -6,14 +6,16 @@
      text-align: center;
      color: #4181ee;
 }
- .wrapper{
+  .wrapper{
      display: flex;
      justify-content: center;
      flex-wrap: wrap;
+     min-height: 60vh;
 }
  .card{
     max-width: 300px;
      min-height: 250px;
+     max-height: 200px;
      background: #02b875;
      padding: 30px;
       border-radius: 3px;
@@ -21,6 +23,7 @@
      color: #FFF;
      margin:20px;
       box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px, rgb(0 0 0 / 30%) 0px 18px 36px -18px;
+    
 }
  .card:nth-child(2){
     background: #4181ee;
