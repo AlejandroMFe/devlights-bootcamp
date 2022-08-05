@@ -1,21 +1,59 @@
 <Navbar></Navbar>
-<h1>Pricing</h1>
-<div class="wrapper">
-    <div class="card">
-        <h3 class="card-title">{{classes[0]}}</h3>
-            <p class="card-content">${{prices[0]}} <br> {{features[0]}} <br> {{description[0]}}</p>
-            <button class="card-btn" routerLink="/classes">SUSCRIBE</button>
+<div class="container py-3 mt-5 text-dark" >
+    <div class="row row-cols-3 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+            <div class="card mb-4 rounded-3 border-primary shadow-sm">
+                <div class="card-header py-3 text-bg--primary">
+                    <h4 class="my-0 fw-normal">{{classes[0]}}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">${{prices[0]}}<small
+                            class="text-muted fw-light">/mensual</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>{{features[0]}}</li>
+                        <li>{{description[0]}}</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary"
+                        routerLink="/classes">Suscribir</button>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <h3 class="card-title">{{classes[1]}}</h3>
-            <p class="card-content">${{prices[1]}} <br> {{features[1]}} <br> {{description[1]}}</p>
-            <button class="card-btn" routerLink="/classes">SUSCRIBE</button>
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm  border-warning">
+                <div class="card-header py-3 text-bg-warning">
+                    <h4 class="my-0 fw-normal">{{classes[1]}}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">${{prices[1]}}<small
+                            class="text-muted fw-light">/mensual</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>{{features[1]}}</li>
+                        <li>{{description[1]}}</li>
+                    </ul>
+                    <button type="button" 
+                    class="w-100 btn btn-lg btn-outline-warning"
+                        routerLink="/classes">Suscribir</button>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <h3 class="card-title">{{classes[2]}}</h3>
-            <p class="card-content">${{prices[2]}} <br> {{features[2]}} <br> {{description[2]}}</p>
-            <button class="card-btn" routerLink="/classes">SUSCRIBE</button>
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-danger ">
+                <div class="card-header py-3 text-bg-danger ">
+                    <h4 class="my-0 fw-normal " >{{classes[2]}}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">${{prices[2]}}<small
+                            class="text-muted fw-light">/mensual</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>{{features[2]}}</li>
+                        <li>{{description[2]}}</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-danger "
+                        routerLink="/classes">Suscribir</button>
+                </div>
+            </div>
         </div>
-        
     </div>
+</div>
+
 <Footer></Footer>
