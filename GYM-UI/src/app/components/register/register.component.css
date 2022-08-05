@@ -1,7 +1,4 @@
-body{
-    text-align:center;
-     background-image: linear-gradient(135deg, #007991 30%, #78ffd6 90%);
- }
+
  @media (min-width: 48.063rem) {
      .register-wrapper { padding: 5rem;}
  } 
@@ -18,9 +15,9 @@ body{
  .register-wrapper form input {
       display: inline-block;
       width: 100%;
-      padding: 0 20px;
+      padding: 2rem auto;
       line-height: 50px;
-      height: 65px;
+      height: 3rem;
       background-color: white;
       border: 2px solid #e6e6e6;
       border-bottom-width: 3px;
@@ -28,8 +25,12 @@ body{
       outline: 0;
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease;
+      
     }
- 
+ .form-text{
+     color: #999999;
+     font-size: x-large;
+ }
  .register-wrapper form input:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -82,7 +83,7 @@ body{
       max-width: 500px;
       margin: auto;
       padding: 30px;
-      background-color: white;
+      background-color: rgb(43, 36, 63);
       box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
       border-radius: 5px;
      
