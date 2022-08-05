@@ -8,6 +8,9 @@ body{
     margin: 0;
     padding: 0;
 }
+html{
+    background-color: rgb(21, 15, 34);
+}
 h1,h2{
     text-align: center;
 }
