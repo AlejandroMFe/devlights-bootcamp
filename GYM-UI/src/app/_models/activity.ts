@@ -18,4 +18,258 @@ export class Activity {
             new Activity('Indoor Bike', 'Supera tus límites ampliando tus capacidades', '../../../assets/indoorbike.jpg'),
         ];
     }
+
+    public static getStudentsActivities(): any[] {
+        return [
+            {
+                name: 'Juan Pablo',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "G.A.P."
+            }
+            ,
+            {
+                name: 'Sebastian',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "G.A.P."
+            },
+            {
+                name: 'Juan Pablo',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "G.A.P."
+            }
+            ,
+            {
+                name: 'Sebastian',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "G.A.P."
+            },
+            {
+                name: 'Juan Pablo',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "G.A.P."
+            }
+            ,
+            {
+                name: 'Sebastian',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "G.A.P."
+            },
+            {
+                name: 'Steffanie',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Pilates'
+            },
+            {
+                name: 'Juana',
+                lastname: 'Sanchez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Pilates'
+            }
+            ,
+            {
+                name: 'Leandro',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Pilates'
+            }
+            ,
+            {
+                name: 'Julian',
+                lastname: 'Perezas',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Pilates'
+            },
+
+            {
+                name: 'Julian',
+                lastname: 'Perezas',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Pilates'
+            },
+
+            {
+                name: 'Julian',
+                lastname: 'Perezas',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Pilates'
+            }
+            ,
+            {
+                name: 'Ana',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Pilates'
+            },
+            {
+                name: 'Juan',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            },
+            {
+                name: 'Pedro',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            },
+            {
+                name: 'Juana',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            }
+            ,
+            {
+                name: 'Julian',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            },
+            {
+                name: 'Pedro',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            },
+            {
+                name: 'Juana',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            }
+            ,
+            {
+                name: 'Julian',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            },
+            {
+                name: 'Pedro',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            },
+            {
+                name: 'Juana',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            }
+            ,
+            {
+                name: 'Julian',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: "Indoor Bike"
+            },
+            {
+                name: 'JMarilyn',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            }
+            ,
+            {
+                name: 'Ryan',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            },
+            {
+                name: 'JMarilyn',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            }
+            ,
+            {
+                name: 'Ryan',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            },
+            {
+                name: 'JMarilyn',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            }
+            ,
+            {
+                name: 'Ryan',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            },
+            {
+                name: 'JMarilyn',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            }
+            ,
+            {
+                name: 'Ryan',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            },
+            {
+                name: 'JMarilyn',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            }
+            ,
+            {
+                name: 'Ryan',
+                lastname: 'Perez',
+                age: '20',
+                email: 'applied@example.com',
+                class: 'Musculación'
+            }
+
+
+        ];
+    }
 }
