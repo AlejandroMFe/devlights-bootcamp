@@ -2,20 +2,22 @@ export class Activity {
     title!: string;
     description!: string;
     urlImage: string;
+    price: number;
 
-    constructor(title: string, description: string, urlImage: string) {
+    constructor(title: string, description: string, urlImage: string, price: number) {
         this.title = title;
         this.description = description;
         this.urlImage = urlImage;
+        this.price = price;
     }
 
     public static getActivities(): Activity[] {
         return [
-            new Activity('Musculacion', 'Esculpí tus músculos con entrenamientos personalizados', '../../../assets/musculacion1.jpg'),
-            new Activity('G.A.P.', 'Clase intensiva para trabajar glúteos abdomen y piernas', '../../../assets/gap.jpg'),
-            new Activity('Pilates', 'Fotalece y gana flexibilidad para tus músculos', '../../../assets/pilates.jpg'),
-            new Activity('Funcional', 'Disfruta de un entrenamiento intensivo, divertido y en grupo', '../../../assets/funcional.jpg'),
-            new Activity('Indoor Bike', 'Supera tus límites ampliando tus capacidades', '../../../assets/indoorbike.jpg'),
+            new Activity('Musculacion', 'Esculpí tus músculos con entrenamientos personalizados', '../../../assets/musculacion1.jpg',3000),
+            new Activity('G.A.P.', 'Clase intensiva para trabajar glúteos abdomen y piernas', '../../../assets/gap.jpg',3500),
+            new Activity('Pilates', 'Fotalece y gana flexibilidad para tus músculos', '../../../assets/pilates.jpg',2500),
+            new Activity('Funcional', 'Disfruta de un entrenamiento intensivo, divertido y en grupo', '../../../assets/funcional.jpg',4500),
+            new Activity('Indoor Bike', 'Supera tus límites ampliando tus capacidades', '../../../assets/indoorbike.jpg',3700),
         ];
     }
 
