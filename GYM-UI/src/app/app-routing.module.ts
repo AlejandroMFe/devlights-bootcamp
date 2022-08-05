@@ -47,7 +47,12 @@ export const routes: Routes = [
   {
     path: 'lista-class',
     component: ClassComponent
+  },
+  {
+    path: 'prices',
+    component: Pricing
   }
+
 ];
 
 @NgModule({

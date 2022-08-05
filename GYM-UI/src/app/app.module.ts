@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import{ Navbar } from './components/navbar/navbar.component';
-import{ Footer } from './components/footer/footer.component';
-import{ Section } from './components/section/section.component';
+import { Navbar } from './components/navbar/navbar.component';
+import { Footer } from './components/footer/footer.component';
+import { Section } from './components/section/section.component';
 import { Pricing } from './components/Pricing/Pricing.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
@@ -22,8 +21,8 @@ import { ClassComponent } from './components/admin/class/class.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ActivitiesComponent } from './activities/activities.component';
-import { Activity } from './_models/activity';
 import { ActivityComponent } from './activity/activity.component';
+import { NavbarAdminComponent } from './components/admin/navbar-admin/navbar-admin.component';
 
 
 
@@ -47,6 +46,7 @@ import { ActivityComponent } from './activity/activity.component';
     ClassComponent,
     ActivitiesComponent,
     ActivityComponent,
+    NavbarAdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,15 +57,15 @@ import { ActivityComponent } from './activity/activity.component';
     ToastrModule.forRoot(),
     RouterModule.forRoot([
       { path: 'pricing', component: Pricing },
-      {path: 'login', component: Login},
-      {path: 'about', component: About},
-      {path: 'register', component: RegisterComponent},
-      {path: 'admin', component: AdminViewComponent},
-      {path: 'student', component: StudentViewComponent},
-      {path: 'classes', component: ClassesComponent},
+      { path: 'login', component: Login },
+      { path: 'about', component: About },
+      { path: 'register', component: RegisterComponent },
+      { path: 'admin', component: AdminViewComponent },
+      { path: 'student', component: StudentViewComponent },
+      { path: 'classes', component: ClassesComponent },
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
