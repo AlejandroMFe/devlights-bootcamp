@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { Pricing } from './components/Pricing/Pricing.component';
@@ -8,7 +8,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ClassesComponent } from './components/classes/classes.component';
 import { ListaStudentComponent } from './components/admin/lista-student/lista-student.component';
 import { ListaStudentClassComponent } from './components/admin/lista-student-class/lista-student-class.component';
-import {ClassComponent} from './components/admin/class/class.component';
+import { ClassComponent } from './components/admin/class/class.component';
+import { ActivitiesComponent } from './activities/activities.component';
 
 
 export const routes: Routes = [
@@ -22,7 +23,7 @@ export const routes: Routes = [
   },
   {
     path: 'post/:variable',
-    component: Pricing 
+    component: Pricing
   },
   {
     path: 'login',
@@ -49,14 +50,19 @@ export const routes: Routes = [
     component: ClassComponent
   },
   {
+
     path: 'prices',
     component: Pricing
+  },
+  {
+    path: 'activities',
+    component: ActivitiesComponent
   }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

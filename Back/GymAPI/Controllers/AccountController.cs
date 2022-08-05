@@ -56,7 +56,7 @@ namespace GymAPI.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<StudentDTO>> Register(RegisterDTO user)
         {
-            if (UserExist(user.Username)) return BadRequest("Username is already taken");
+            if (UserExist(user.UserName)) return BadRequest("Username is already taken");
 
             //using var hmac = new HMACSHA512();
 
@@ -71,7 +71,7 @@ namespace GymAPI.Controllers
             //_context.SaveChanges();
 
             var newStudent = _mapper.Map<Student>(user);
-            newStudent.UserName = user.Username;
+            newStudent.UserName = user.UserName;
 
             var result = await _userManager.CreateAsync(newStudent, user.Password);
             if(!result.Succeeded) return BadRequest(result.Errors);
