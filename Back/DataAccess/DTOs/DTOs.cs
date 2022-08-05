@@ -3,7 +3,7 @@
 public record UserDTO(string UserName, string Token);
 public record LoginDTO(string UserName, string Password);
 public record RegisterDTO(
-    string Username,
+    string UserName,
     string Password,
     string Name,
     string PhoneNumber,

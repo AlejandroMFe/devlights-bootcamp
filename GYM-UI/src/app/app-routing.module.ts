@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { Pricing } from './components/Pricing/Pricing.component';
@@ -9,6 +9,7 @@ import { ClassesComponent } from './components/classes/classes.component';
 import { ListaStudentComponent } from './components/admin/lista-student/lista-student.component';
 import { ListaStudentClassComponent } from './components/admin/lista-student-class/lista-student-class.component';
 import {ClassComponent} from './components/admin/class/class.component';
+import { ActivitiesComponent } from './activities/activities.component';
 
 
 export const routes: Routes = [
@@ -47,6 +48,10 @@ export const routes: Routes = [
   {
     path: 'lista-class',
     component: ClassComponent
+  },
+  {
+    path: 'activities',
+    component: ActivitiesComponent 
   }
 ];
 
