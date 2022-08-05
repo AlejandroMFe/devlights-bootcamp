@@ -11,20 +11,22 @@ import { AuthService } from '../../_services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class Navbar implements OnInit {
-  user: any = {};
-  //currentUser$: Observable<User>;
+  user: any;
+  currentUser$: any;
+  currentUser: any;
 
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    //this.currentUser$ = this.authService.currentUser$;
+    this.currentUser$ = localStorage.getItem('user');
+    this.currentUser = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   login(){
     console.log(this.user);
     this.authService.login(this.user).subscribe({
       //next (paso exitoso)
-      next: user => { console.log(user) },
+      next: user => { console.log(user)},
       //nombre | (nombre) | () => { line1; line2 }
       //error (paso erroneo)
       error: error => console.log(error),
@@ -35,7 +37,7 @@ export class Navbar implements OnInit {
 
   logout(){
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
 }
